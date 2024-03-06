@@ -41,7 +41,7 @@ export const handler: Handlers = {
 export default function Home({ data: content }) {
   return (
     <div className="container">
-      <h1 className="text-center my-3">Random content from CM</h1>
+      <h1 className="text-center my-3">Random content from CM 🎲</h1>
       <div className="row">
         {content.map((ct) => (
           <div className="col-6 col-md-3 col-lg-2 my-2">
