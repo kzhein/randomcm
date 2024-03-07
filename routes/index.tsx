@@ -25,14 +25,11 @@ export const handler: Handlers = {
       Array.from({ length: 4 }).map(() => getRandomContent()),
     )).flat();
 
-    const contentSet = new Set(
-      contentArr.map((ct) => JSON.stringify(ct)),
-    ); // remove duplicates if there are any
-
-    const content = [];
-    contentSet.forEach((ct) => {
-      content.push(JSON.parse(ct));
+    const contentMap = {};
+    contentArr.forEach((ct) => {
+      contentMap[ct.link] = ct;
     });
+    const content = Object.values(contentMap);
 
     return ctx.render(content);
   },
